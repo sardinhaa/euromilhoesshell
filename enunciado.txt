@@ -1,0 +1,10 @@
+Elabora um script cujos requisitos são:
+
+- Um loop while que irá rodar 5 vezes
+- De cada vez é apresentado um numero aleatório de 1 a 50
+- um segundo loop que irá rodar 2 vezes
+- De cada vez é apresentado um número aleatório de 1 a 12
+
+No final de cada ciclo pergunta se quer repetir a sequência.
+
+Resumindo, um programa que vai gerar uma ou mais chaves para o jogo euro-milhões
