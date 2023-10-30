@@ -1,26 +1,29 @@
 #!/bin/bash
 
-function gera_numeros {
-    numeros=$(shuf -i 1-45 -n 5)
-    numeros="$numeros +"
-    numeros_aux=$(shuf -i 1-12 -n 2)
-    numeros="$numeros $numeros_aux"
-    echo $numeros
-}
+clear
 
-function pergunta_repetir {
-    read -p "Deseja gerar outra chave? (y/n): " resposta
-    if [[ $resposta == 'y' ]] || [[ $resposta == 'y' ]]; then
-        return 1
-    else
-        return 0
-    fi
+function loop() {
+    echo "Loop while com 5 vezes:"
+
+    i=0
+    while [ $i -lt 5 ]; do
+        randomNumber=$((RANDOM % 50 + 1))
+        echo "Número aleatório de 1 a 50: $randomNumber"
+
+        randomNumber=$((RANDOM % 12 + 1))
+        echo "Número aleatório de 1 a 12: $randomNumber"
+
+        i=$((i + 1))
+    done
 }
 
 while true; do
-    echo "Chave gerada: $(gera_numeros)"
-    if ! pergunta_repetir; then
+    loop
+
+    echo "Deseja repetir a sequência? (s/n)"
+    read answer
+
+    if [ "$answer" = "n" ]; then
         break
     fi
 done
-
