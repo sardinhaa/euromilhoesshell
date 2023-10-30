@@ -3,22 +3,27 @@
 rpt="s"
 
 while [ "$rpt" = "s" ]; do
-    for i in {1..5}; do
         echo "aqui esta a chave:"
         echo -n "numeros: "
-        for j in {1..5}; do
-            numero=$((1 + RANDOM % 50))
+        for ger50 in {1..5}; do
+            numero=$((RANDOM % 50 + 1))
             echo -n "$numero "
         done
 
         echo -n "estrelas: "
-        for k in {1..2}; do
-            estrelas=$((1 + RANDOM % 12))
+        for ger12 in {1..2}; do
+            estrelas=$((RANDOM % 12 + 1))
             echo -n "$estrelas "
         done
 
         echo
-    done
 
     read -p "queres gerar outra chave para o euromilhoes? (s/n): " rpt
 done
+
+while [ "$rpt" = "n" ];do 
+    echo "adeus" 
+    break
+done
+
+
