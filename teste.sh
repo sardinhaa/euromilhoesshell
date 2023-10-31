@@ -22,3 +22,14 @@ while [ "$rpt" = "s" ]; do
 done
 
 echo "adeus"
+
+while [[ " ${numeros_1_12[@]} " =~ " $randomNum " ]]; do
+       echo "Número $randomNum já existe no intervalo 1-12. Gerando outro número."
+       randomNum=$((RANDOM%12+1))
+       echo "Novo número gerado: $randomNum"
+   done
+   numeros_1_12+=("$randomNum")
+   echo "$randomNum" >> "$ficheiro"
+   contador=$(($contador+1))
+
+
