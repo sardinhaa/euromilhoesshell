@@ -1,43 +1,24 @@
+#!/bin/bash
 
-verificar_sorteio() {
-    numero=$1
-    while read -r sorteio; do
-        if [ "$numero" -eq "$sorteio" ]; then
-            return 1
-        fi
-    done < "$2"
-    return 0
-}
+rpt="s"
 
-chave=0
-repetir=true
-
-while [ "$repetir" = true ]; do
-
-    echo "Gerando chave para o jogo Euro-Milhões..."
-
-    for i in {1..5}; do
-        sorteio=$(($RANDOM % 50 + 1)))
-        while verificar_sorteio "$sorteio" "$chave"; do
-            sorteio=$(($RANDOM % 50 + 1)))
+while [ "$rpt" = "s" ]; do
+        echo "aqui esta a chave:"
+        echo -n "numeros: "
+        for ((i = 1; i <= 5; i++)); do
+            numero=$((RANDOM % 50 + 1))
+            echo -n "$numero "
         done
-        echo "Número sorteado $i: $sorteio"
-        echo "$sorteio" >> "$chave"
-    done
 
-    for i in {1..2}; do
-        sorteio_euro_milhoes=$(($RANDOM % 12 + 1)))
-        while verificar_sorteio "$sorteio_euro_milhoes" "$chave"; do
-            sorteio_euro_milhoes=$(($RANDOM % 12 + 1)))
+        echo -n "estrelas: "
+        for ((i = 1; i <= 2; i++)); do
+            estrelas=$((RANDOM % 12 + 1))
+            echo -n "$estrelas "
         done
-        echo "Número sorteado para o Euro-Milhões $i: $sorteio_euro_milhoes"
-        echo "$sorteio_euro_milhoes" >> "$chave"
-    done
 
-    read -p "Deseja gerar outra chave? (s/n) " resposta
+        echo
 
-    if [ "$resposta" = s ]; then
-        repetir=true
-        chave="$chave"_outro
-    else
-        repet
+    read -p "queres gerar outra chave para o euromilhoes? (s/n): " rpt
+done
+
+echo "adeus"
