@@ -5,12 +5,14 @@ rpt="s"
 while [ "$rpt" = "s" ]; do
         echo "aqui esta a chave:"
         echo -n "numeros: "
+        for ((i = 1; i <= 5; i++)); do
         for ger50 in {1..5}; do
             numero=$((RANDOM % 50 + 1))
             echo -n "$numero "
         done
 
         echo -n "estrelas: "
+        for ((i = 1; i <= 2; i++)); do
         for ger12 in {1..2}; do
             estrelas=$((RANDOM % 12 + 1))
             echo -n "$estrelas "
