@@ -19,6 +19,7 @@ while [ "$rpt" = "s" ]; do
         echo
 
     read -p "queres gerar outra chave para o euromilhoes? (s/n): " rpt
+while [ "$rpt" = "n" ];do 
+    echo "adeus" 
+    break
 done
-
-echo "adeus"
