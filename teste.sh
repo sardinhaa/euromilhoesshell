@@ -5,26 +5,26 @@ rpt="s"
 while [ "$rpt" = "s" ]; do
     echo "aqui esta a chave:"
     
-    numbers=()
-    stars=()
+    numb=()
+    st=()
     
     echo -n "numeros: "
-    while [ ${#numbers[@]} -lt 5 ]; do
-        numero=$((RANDOM % 50 + 1))
+    while [ ${#numb[@]} -lt 5 ]; do
+        num=$((RANDOM % 50 + 1))
         
-        if ! [[ " ${numbers[*]} " =~ " $numero " ]]; then
-            numbers+=($numero)
-            echo -n "$numero "
+        if ! [[ " ${numbers[*]} " =~ " $num " ]]; then
+            numb+=($num)
+            echo -n "$num "
         fi
     done
 
     echo -n "estrelas: "
-    while [ ${#stars[@]} -lt 2 ]; do
-        estrelas=$((RANDOM % 12 + 1))
+    while [ ${#st[@]} -lt 2 ]; do
+        est=$((RANDOM % 12 + 1))
         
-        if ! [[ " ${stars[*]} " =~ " $estrelas " ]]; then
-            stars+=($estrelas)
-            echo -n "$estrelas "
+        if ! [[ " ${st[*]} " =~ " $est " ]]; then
+            st+=($est)
+            echo -n "$est "
         fi
     done
 
