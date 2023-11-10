@@ -1,0 +1,15 @@
+#/bin/bash 
+clear
+$(p1=" ")
+while true
+    do
+        read -p "linha(2-24)?" linhas
+        clear
+        read -p "coluna(2-80)?" coluna
+        tput clear cup $linha $coluna
+        echo x
+        sleep 2
+        tput clear cup $linha $coluna
+        echo " "
+        tput cup 0 0
+    done
